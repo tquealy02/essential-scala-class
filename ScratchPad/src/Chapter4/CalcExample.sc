@@ -12,6 +12,18 @@ final case class Number(value: Double) extends Expression {
   def eval = Success(value)
 }
 
+final case class SquareRoot(value: Double) extends Expression {
+
+  def eval = {
+    if(value < 0){
+      FAIL("Negative Square Root")
+    }
+    else
+      Success(math.sqrt(value))
+  }
+
+}
+
 sealed trait Operator extends Expression {
 
   def left: Expression
