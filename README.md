@@ -1,0 +1,1 @@
+# essential-scala-class
